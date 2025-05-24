@@ -1,0 +1,9 @@
+.hero {
+  text-align: center;
+  padding: 4rem 1rem;
+  background: linear-gradient(to right, #007bff, #00d4ff);
+  color: white;
+}
+.hero h1 {
+  font-size: 3rem;
+}

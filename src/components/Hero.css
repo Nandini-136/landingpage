@@ -1,0 +1,135 @@
+.hero {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5rem 2rem;
+  color: white;
+  overflow: hidden;
+  min-height: 550px;
+}
+
+/* Background image with blur and dark tint */
+.hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+  filter: blur(15px) brightness(0.5);
+  transform: scale(1.1);
+  z-index: 1;
+}
+
+/* Main content wrapper */
+.hero-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  width: 100%;
+  gap: 2rem;
+  animation: fadeIn 1s ease-out;
+}
+
+/* Text block directly on background */
+.hero-text {
+  flex: 1;
+  max-width: 600px;
+  animation: slideUp 1.2s ease-out forwards;
+  opacity: 0;
+}
+
+.hero-text h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  background: linear-gradient(to right, #00d2ff, #3a47d5);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-text .highlight {
+  color: #ffd700;
+  font-weight: 800;
+}
+
+.hero-text p {
+  font-size: 1.3rem;
+  font-weight: 300;
+  line-height: 1.6;
+  color: #f0f0f0;
+  opacity: 0.9;
+  animation: fadeIn 1.8s ease-out forwards;
+  animation-delay: 0.5s;
+}
+
+/* Image with hover zoom and animation */
+.hero-image img {
+  max-width: 400px;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+  transform: scale(1);
+  transition: transform 0.5s ease;
+  animation: slideInRight 1.4s ease-out forwards;
+  opacity: 0;
+}
+
+.hero-image img:hover {
+  transform: scale(1.05);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Responsive layout */
+@media (max-width: 768px) {
+  .hero-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-image img {
+    max-width: 90%;
+  }
+
+  .hero-text h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-text p {
+    font-size: 1.1rem;
+  }
+}
